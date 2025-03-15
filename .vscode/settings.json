@@ -1,3 +1,9 @@
 {
-    "git.postCommitCommand": "sync"
+  "git.postCommitCommand": "sync",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  }
 }
