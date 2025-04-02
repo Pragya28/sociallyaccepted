@@ -1,3 +1,4 @@
+'use client';
 import { SVGS } from '@/assets/svgs';
 import { Navbar } from '@/components/nav-bar/nav-bar';
 import { NavbarItem } from '@/components/nav-bar/nav-bar-item';
@@ -11,16 +12,21 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/ui/navigation-menu';
+import { Menu } from 'lucide-react';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="h-screen w-screen flex flex-col gap-1">
       <Navbar />
-      <NavigationMenu className="p-[2px] bg-foreground text-background">
-        <div className="flex flex-1 justify-between w-screen items-center p-0">
+      <NavigationMenu className="p-[2px] bg-foreground text-background shadow-md">
+        <div className="hidden md:flex flex-1 justify-between w-screen items-center p-0 mx-8">
           <NavigationMenuList>
-            <SVGS.FullLogo className="text-background" />
+            <SVGS.Logo25 className="text-background" />
+          </NavigationMenuList>
+          <NavigationMenuList>
             <NavbarItem>
               <Link href="/" legacyBehavior passHref>
                 Item One
@@ -31,10 +37,13 @@ export default function Home() {
                 Item Two
               </Link>
             </NavbarItem>
-          </NavigationMenuList>
-          <NavigationMenuList>
             <ThemeToggle />
           </NavigationMenuList>
+        </div>
+        <div className="md:hidden flex flex-1 justify-between w-screen items-center p-0 mx-4">
+          <Menu onClick={() => setIsOpen(!isOpen)} />
+          <SVGS.Logo10 className="text-background" />
+          <ThemeToggle />
         </div>
       </NavigationMenu>
     </div>

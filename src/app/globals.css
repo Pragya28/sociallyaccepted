@@ -47,19 +47,19 @@
 
 :root {
   --background: oklch(1 0 0); /* #FFFFFF */
-  --foreground: oklch(0.12 0.0205 348.67); /* #0A0306 */
+  --foreground: oklch(0.2 0.0775 303.72); /* #1f0a33 */
   --card: oklch(0.95 0 0); /* #F2F2F2 */
-  --card-foreground: oklch(0.12 0.0205 348.67); /* #0A0306 */
+  --card-foreground: oklch(0.2 0.0775 303.72); /* #1f0a33 */
   --popover: oklch(1 0 0); /* #FFFFFF */
-  --popover-foreground: oklch(0.12 0.0205 348.67); /* #0A0306 */
+  --popover-foreground: oklch(0.2 0.0775 303.72); /* #1f0a33 */
   --primary: oklch(0.52 0.156 302.77); /* #976BC3 */
   --primary-foreground: oklch(1 0 0); /* #FFFFFF */
   --secondary: oklch(0.92 0.06 302.77); /* #E1D4EE */
-  --secondary-foreground: oklch(0.12 0.0205 348.67); /* #0A0306 */
+  --secondary-foreground: oklch(0.2 0.0775 303.72); /* #1f0a33 */
   --muted: oklch(0.95 0.03 302.77); /* #F0E9F6 */
-  --muted-foreground: oklch(0.02 0.01 345.32 / 0.6); /* #0A0306 with 0.6 opacity */
+  --muted-foreground: oklch(0.02 0.01 345.32 / 0.6); /* #1f0a33 with 0.6 opacity */
   --accent: oklch(0.92 0.06 302.77); /* #E1D4EE */
-  --accent-foreground: oklch(0.12 0.0205 348.67); /* #0A0306 */
+  --accent-foreground: oklch(0.2 0.0775 303.72); /* #1f0a33 */
   --destructive: oklch(0.52 0.156 302.77); /* Using #976BC3 for consistency */
   --destructive-foreground: oklch(1 0 0); /* #FFFFFF */
   --border: oklch(0.95 0 0); /* #F2F2F2 */
@@ -72,17 +72,17 @@
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.625rem;
   --sidebar: oklch(1 0 0); /* #FFFFFF */
-  --sidebar-foreground: oklch(0.12 0.0205 348.67); /* #0A0306 */
+  --sidebar-foreground: oklch(0.2 0.0775 303.72); /* #1f0a33 */
   --sidebar-primary: oklch(0.52 0.156 302.77); /* #976BC3 */
   --sidebar-primary-foreground: oklch(1 0 0); /* #FFFFFF */
   --sidebar-accent: oklch(0.92 0.06 302.77); /* #E1D4EE */
-  --sidebar-accent-foreground: oklch(0.12 0.0205 348.67); /* #0A0306 */
+  --sidebar-accent-foreground: oklch(0.2 0.0775 303.72); /* #1f0a33 */
   --sidebar-border: oklch(0.95 0 0); /* #F2F2F2 */
   --sidebar-ring: oklch(0.52 0.156 302.77); /* #976BC3 */
 }
 
 .dark {
-  --background: oklch(0.12 0.0205 348.67); /* #0A0306 */
+  --background: oklch(0.2 0.0775 303.72); /* #1f0a33 */
   --foreground: oklch(1 0 0); /* #FFFFFF */
   --card: oklch(0.21 0.0726 303.8); /* #200D33 */
   --card-foreground: oklch(1 0 0); /* #FFFFFF */
