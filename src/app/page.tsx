@@ -2,16 +2,8 @@
 import { SVGS } from '@/assets/svgs';
 import { Navbar } from '@/components/nav-bar/nav-bar';
 import { NavbarItem } from '@/components/nav-bar/nav-bar-item';
-import { NavigationMenuDemo } from '@/components/nav-bar/nav-demo';
 import { ThemeToggle } from '@/components/theme';
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from '@/ui/navigation-menu';
+import { NavigationMenu, NavigationMenuList } from '@/ui/navigation-menu';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
