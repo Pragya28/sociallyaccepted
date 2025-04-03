@@ -13,7 +13,9 @@ export const NavDesktop = ({ navItems }: NavDesktopProps) => {
   return (
     <div className="hidden md:flex flex-1 justify-between w-screen items-center p-0 mx-8">
       <NavigationMenuList>
-        <SVGS.Logo25 className="text-background py-[4px]" />
+        <Link href={'/'} legacyBehavior passHref>
+          <SVGS.Logo25 className="text-background py-[4px] cursor-pointer" />
+        </Link>
       </NavigationMenuList>
       <NavigationMenuList>
         {navItems.map(({ title, linkTo }, index) => (

@@ -19,7 +19,9 @@ export const NavMobile = ({ navItems }: NavMobileProps) => {
     <>
       <div className="md:hidden flex flex-1 justify-between w-screen items-center p-2 mx-4">
         {isOpen ? <X onClick={() => setIsOpen(false)} /> : <Menu onClick={() => setIsOpen(true)} />}
-        <SVGS.Logo10 className="text-background" />
+        <Link href={'/'} legacyBehavior passHref>
+          <SVGS.Logo10 className="text-background cursor-pointer" />
+        </Link>
         <ThemeToggle />
       </div>
       {isOpen && (
@@ -27,7 +29,7 @@ export const NavMobile = ({ navItems }: NavMobileProps) => {
           <NavigationMenuList className="flex flex-col">
             {navItems.map(({ title, linkTo }, index) => (
               <Fragment key={index}>
-                <NavbarItem>
+                <NavbarItem onClick={() => setIsOpen(false)}>
                   <Link href={linkTo} legacyBehavior passHref>
                     {title}
                   </Link>

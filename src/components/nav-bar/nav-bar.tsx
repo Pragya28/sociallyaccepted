@@ -4,10 +4,7 @@ import { NavDesktop } from './nav-desktop';
 import { NavMobile } from './nav-mobile';
 
 export const Navbar = () => {
-  const navItems: NavItems[] = [
-    { title: 'Item One', linkTo: '/' },
-    { title: 'Item Two', linkTo: '/' },
-  ];
+  const navItems: NavItems[] = [{ title: 'Episodes', linkTo: '/episodes' }];
 
   return (
     <NavigationMenu className="p-[2px] bg-foreground text-background shadow-md flex-col md:flex-row">
