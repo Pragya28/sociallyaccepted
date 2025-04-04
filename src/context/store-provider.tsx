@@ -1,14 +1,6 @@
 'use client';
 
-import {
-  AnyActionArg,
-  ActionDispatch,
-  createContext,
-  ReactNode,
-  useContext,
-  useReducer,
-  useState,
-} from 'react';
+import { ActionDispatch, createContext, ReactNode, useContext, useReducer } from 'react';
 
 type State = {
   isHalfWayScrollPosition: boolean;
