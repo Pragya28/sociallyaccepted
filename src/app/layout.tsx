@@ -3,6 +3,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme';
 import { Inter } from 'next/font/google';
 import { Navbar } from '@/components/nav-bar';
+import { StoreProvider } from '@/context/store-provider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,12 +30,14 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="h-screen w-screen flex flex-col gap-1">
-            <div className="sticky top-0 z-50">
-              <Navbar />
+          <StoreProvider>
+            <div className="w-screen flex flex-col gap-1">
+              <div className="sticky top-0 z-50">
+                <Navbar />
+              </div>
+              <div className="flex my-5 mx-12 md:mx-48">{children}</div>
             </div>
-            <div className="flex my-5 mx-12 md:mx-48">{children}</div>
-          </div>
+          </StoreProvider>
         </ThemeProvider>
       </body>
     </html>
