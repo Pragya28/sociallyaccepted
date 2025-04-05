@@ -16,9 +16,5 @@ export default function Home() {
     }
   }, [scrollPosition]);
 
-  return (
-    <div>
-      <div ref={firstDivRef} className="flex flex-col gap-1"></div>
-    </div>
-  );
+  return <div ref={firstDivRef} className="flex flex-col md:flex-row gap-1"></div>;
 }

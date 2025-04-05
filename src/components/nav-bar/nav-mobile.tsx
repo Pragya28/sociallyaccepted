@@ -1,6 +1,5 @@
 'use client';
 
-import { SVGS } from '@/assets/svgs';
 import { NavItems } from '@/types/interface';
 import { Menu, X } from 'lucide-react';
 import { Fragment, useState } from 'react';
@@ -10,6 +9,7 @@ import { NavbarItem } from './nav-bar-item';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getIsHalfwayScrollPosition, useStore } from '@/context/store-provider';
+import { Logo } from '@/assets/logo';
 
 interface NavMobileProps {
   navItems: NavItems[];
@@ -27,7 +27,10 @@ export const NavMobile = ({ navItems }: NavMobileProps) => {
         {isOpen ? <X onClick={() => setIsOpen(false)} /> : <Menu onClick={() => setIsOpen(true)} />}
         {(pathname !== '/' || halfHeightReached) && (
           <Link href={'/'} legacyBehavior passHref>
-            <SVGS.Logo10 className="text-background cursor-pointer" />
+            <Logo.SingleLine
+              className="text-background h-[22px] w-[166px] cursor-pointer"
+              scale={0.1}
+            />
           </Link>
         )}
         <ThemeToggle />

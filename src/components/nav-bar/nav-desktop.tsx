@@ -1,6 +1,5 @@
 'use client';
 
-import { SVGS } from '@/assets/svgs';
 import { NavItems } from '@/types/interface';
 import { NavigationMenuList } from '@/ui/navigation-menu';
 import { NavbarItem } from './nav-bar-item';
@@ -8,6 +7,7 @@ import Link from 'next/link';
 import { ThemeToggle } from '../theme/theme-toggle';
 import { usePathname } from 'next/navigation';
 import { getIsHalfwayScrollPosition, useStore } from '@/context/store-provider';
+import { Logo } from '@/assets/logo';
 
 interface NavDesktopProps {
   navItems: NavItems[];
@@ -23,7 +23,10 @@ export const NavDesktop = ({ navItems }: NavDesktopProps) => {
       <NavigationMenuList>
         {(pathname !== '/' || halfHeightReached) && (
           <Link href={'/'} legacyBehavior passHref>
-            <SVGS.Logo25 className="text-background py-[4px] cursor-pointer" />
+            <Logo.SingleLine
+              className="text-background py-[4px] h-[55px] w-[415px] cursor-pointer"
+              scale={0.25}
+            />
           </Link>
         )}
       </NavigationMenuList>
