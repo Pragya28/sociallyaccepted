@@ -27,10 +27,12 @@ export const NavMobile = ({ navItems }: NavMobileProps) => {
         {isOpen ? <X onClick={() => setIsOpen(false)} /> : <Menu onClick={() => setIsOpen(true)} />}
         {(pathname !== '/' || halfHeightReached) && (
           <Link href={'/'} legacyBehavior passHref>
-            <Logo.SingleLine
-              className="text-background h-[22px] w-[166px] cursor-pointer"
-              scale={0.1}
-            />
+            <div>
+              <Logo.SingleLine
+                className="text-background h-[22px] w-[166px] cursor-pointer"
+                scale={0.1}
+              />
+            </div>
           </Link>
         )}
         <ThemeToggle />

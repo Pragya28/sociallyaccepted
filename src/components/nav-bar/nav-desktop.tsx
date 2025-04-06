@@ -23,10 +23,12 @@ export const NavDesktop = ({ navItems }: NavDesktopProps) => {
       <NavigationMenuList>
         {(pathname !== '/' || halfHeightReached) && (
           <Link href={'/'} legacyBehavior passHref>
-            <Logo.SingleLine
-              className="text-background py-[4px] h-[55px] w-[415px] cursor-pointer"
-              scale={0.25}
-            />
+            <div>
+              <Logo.SingleLine
+                className="text-background py-[4px] h-[55px] w-[415px] cursor-pointer"
+                scale={0.25}
+              />
+            </div>
           </Link>
         )}
       </NavigationMenuList>
