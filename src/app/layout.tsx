@@ -35,7 +35,7 @@ export default function RootLayout({
               <div className="sticky top-0 z-50">
                 <Navbar />
               </div>
-              <div className="flex my-5 mx-12 md:mx-48">{children}</div>
+              <div className="flex py-5 px-8 md:px-48">{children}</div>
             </div>
           </StoreProvider>
         </ThemeProvider>

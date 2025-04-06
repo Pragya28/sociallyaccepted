@@ -5,5 +5,5 @@ export interface NavItems {
 
 export interface LogoProps {
   className: string;
-  scale: number;
+  scale?: number;
 }
