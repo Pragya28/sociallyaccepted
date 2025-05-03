@@ -19,13 +19,13 @@ export const NavDesktop = ({ navItems }: NavDesktopProps) => {
   const halfHeightReached = getIsHalfwayScrollPosition(state);
 
   return (
-    <div className="hidden md:flex flex-1 justify-between w-screen items-center p-0 mx-8 min-h-[55px]">
+    <div className="hidden md:flex flex-1 justify-between w-screen items-center p-0 mx-8 min-h-[65px]">
       <NavigationMenuList>
         {(pathname !== '/' || halfHeightReached) && (
           <Link href={'/'} legacyBehavior passHref>
             <div>
               <Logo.SingleLine
-                className="text-background py-[4px] h-[55px] w-[415px] cursor-pointer"
+                className="text-background py-[4px] h-[65px] w-[415px] cursor-pointer"
                 scale={0.25}
               />
             </div>
