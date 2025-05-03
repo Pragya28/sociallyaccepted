@@ -1,5 +1,5 @@
 import { Container } from '@/ui/container';
-import EpisodeItem, { ExampleEpisodeItem } from '../episodes/episode-item';
+import { ExampleEpisodeItem } from '../episodes/episode-item';
 
 export const EpisodeSection = () => {
   return (
