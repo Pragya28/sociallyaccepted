@@ -41,7 +41,7 @@ export const ListenNowSection = () => {
       <div className="font-semibold text-[20px] mb-8 tracking-wide">
         Subscribe and listen to Socially Accepted wherever you get your podcasts
       </div>
-      <div className="flex justify-center items-start gap-16 flex-wrap max-w-5xl mx-auto">
+      <div className="flex justify-center items-start gap-12 flex-wrap max-w-5xl mx-auto">
         {PLATFORM_INFO.map(({ icon: Icon, name, url }) => (
           <a
             key={name}
