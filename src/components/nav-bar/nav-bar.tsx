@@ -7,7 +7,7 @@ export const Navbar = () => {
   const navItems: NavItems[] = [{ title: 'Episodes', linkTo: '/episodes' }];
 
   return (
-    <NavigationMenu className="p-[2px] bg-foreground text-background shadow-md flex-col md:flex-row">
+    <NavigationMenu className="p-[2px] bg-header text-foreground shadow-md flex-col md:flex-row">
       <NavDesktop navItems={navItems} />
       <NavMobile navItems={navItems} />
     </NavigationMenu>

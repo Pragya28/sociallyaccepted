@@ -4,7 +4,6 @@ import { NavItems } from '@/types/interface';
 import { NavigationMenuList } from '@/ui/navigation-menu';
 import { NavbarItem } from './nav-bar-item';
 import Link from 'next/link';
-import { ThemeToggle } from '../theme/theme-toggle';
 import { usePathname } from 'next/navigation';
 import { getIsHalfwayScrollPosition, useStore } from '@/context/store-provider';
 import { Logo } from '@/assets/logo';
@@ -25,7 +24,7 @@ export const NavDesktop = ({ navItems }: NavDesktopProps) => {
           <Link href={'/'} legacyBehavior passHref>
             <div>
               <Logo.SingleLine
-                className="text-background py-[4px] h-[65px] w-[415px] cursor-pointer"
+                className="text-foreground py-[4px] h-[65px] w-[415px] cursor-pointer"
                 scale={0.25}
               />
             </div>
@@ -40,7 +39,6 @@ export const NavDesktop = ({ navItems }: NavDesktopProps) => {
             </Link>
           </NavbarItem>
         ))}
-        <ThemeToggle />
       </NavigationMenuList>
     </div>
   );

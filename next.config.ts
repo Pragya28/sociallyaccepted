@@ -2,17 +2,29 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
   },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
-      issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
+      use: [
+        {
+          loader: '@svgr/webpack',
+          options: {
+            typescript: true,
+            dimensions: false,
+          },
+        },
+      ],
     });
 
     return config;
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

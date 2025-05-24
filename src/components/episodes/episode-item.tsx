@@ -30,7 +30,7 @@ const EpisodeItem: React.FC<EpisodeItemProps> = ({
   };
 
   return (
-    <div className="w-full max-w bg-secondary text-foreground rounded-lg shadow-md overflow-hidden">
+    <div className="w-full bg-card text-foreground rounded-lg shadow-md overflow-hidden">
       <div className="relative w-full aspect-[16/9]">
         <Image
           src={coverImage}
@@ -53,7 +53,7 @@ const EpisodeItem: React.FC<EpisodeItemProps> = ({
         <p className="text-sm line-clamp-3 mb-4">{description}</p>
         <button
           onClick={handleListenNow}
-          className="w-full py-2 px-4 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+          className="w-full py-2 px-4 bg-background text-foreground rounded-md hover:bg-primary/90 transition-colors"
         >
           Listen Now
         </button>

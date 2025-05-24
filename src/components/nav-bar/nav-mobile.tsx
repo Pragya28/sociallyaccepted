@@ -3,7 +3,6 @@
 import { NavItems } from '@/types/interface';
 import { Menu, X } from 'lucide-react';
 import { Fragment, useState } from 'react';
-import { ThemeToggle } from '../theme/theme-toggle';
 import { NavigationMenuList } from '@/ui/navigation-menu';
 import { NavbarItem } from './nav-bar-item';
 import Link from 'next/link';
@@ -29,13 +28,13 @@ export const NavMobile = ({ navItems }: NavMobileProps) => {
           <Link href={'/'} legacyBehavior passHref>
             <div>
               <Logo.SingleLine
-                className="text-background h-[22px] w-[166px] cursor-pointer"
+                className="text-foreground h-[22px] w-[166px] cursor-pointer"
                 scale={0.1}
               />
             </div>
           </Link>
         )}
-        <ThemeToggle />
+        <div />
       </div>
       {isOpen && (
         <div className="md:hidden flex">
@@ -47,9 +46,7 @@ export const NavMobile = ({ navItems }: NavMobileProps) => {
                     {title}
                   </Link>
                 </NavbarItem>
-                {index !== navItems.length - 1 && (
-                  <div className="w-[90vw] bg-background h-[1px]" />
-                )}
+                {index !== navItems.length - 1 && <div className="w-[90vw] bg-border h-[1px]" />}
               </Fragment>
             ))}
           </NavigationMenuList>
