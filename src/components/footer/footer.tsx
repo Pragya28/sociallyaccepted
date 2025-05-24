@@ -1,8 +1,21 @@
 import React from 'react';
 import { SVGS } from '@/assets/svgs';
 import { getSubscriptionList } from '@/utils/subscription-list';
+import Link from 'next/link';
+import { getNavigationLinks } from '@/utils/navigation-links';
+
+const SOCIALS = [
+  { icon: SVGS.Instagram, link: 'https://www.instagram.com/' },
+  {
+    icon: SVGS.Linkedin,
+    link: 'https://in.linkedin.com/',
+  },
+];
 
 export const Footer: React.FC = () => {
+  const quickLinks = getNavigationLinks(true);
+  const subscription = getSubscriptionList(true);
+
   return (
     <footer className="bg-footer text-foreground w-full">
       <div className="max-w-5xl px-4 py-8 flex flex-col gap-6 md:gap-8">
@@ -19,35 +32,23 @@ export const Footer: React.FC = () => {
         {/* Socials */}
         <div className="flex items-center gap-2">
           <span className="font-semibold">Follow Us:</span>
-          <a href="#" className="hover:opacity-80">
-            <SVGS.Instagram className="w-6 h-6" />
-          </a>
-          <a href="#" className="hover:opacity-80">
-            <SVGS.Linkedin className="w-6 h-6" />
-          </a>
+          {SOCIALS.map(({ icon: Icon, link }, index) => (
+            <a key={index} href={link} className="hover:opacity-80">
+              <Icon className="w-6 h-6" />
+            </a>
+          ))}
         </div>
         {/* Quick Links */}
         <div className="flex flex-wrap gap-x-2 gap-y-1 text-base md:text-lg">
           <span className="font-semibold">Quick Links:</span>
-          <a href="/" className="hover:underline">
-            Home
-          </a>
-          <span>|</span>
-          <a href="/episodes" className="hover:underline">
-            Episodes
-          </a>
-          <span>|</span>
-          <a href="/about" className="hover:underline">
-            About
-          </a>
-          <span>|</span>
-          <a href="/support" className="hover:underline">
-            Support
-          </a>
-          <span>|</span>
-          <a href="/contact" className="hover:underline">
-            Contact
-          </a>
+          {quickLinks.map(({ linkTo, title }, index) => (
+            <React.Fragment key={index}>
+              <Link href={linkTo} passHref className="hover:underline">
+                {title}
+              </Link>
+              {index !== quickLinks.length - 1 && <span>|</span>}
+            </React.Fragment>
+          ))}
         </div>
         {/* Policies */}
         <div className="flex flex-wrap gap-x-2 gap-y-1 text-base md:text-lg">
@@ -63,7 +64,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-wrap items-center gap-3">
           <span className="font-semibold">Subscribe:</span>
           <div className="flex flex-wrap items-center gap-3">
-            {getSubscriptionList(true).map(({ icon: Icon, url }, index) => (
+            {subscription.map(({ icon: Icon, url }, index) => (
               <a
                 key={index}
                 href={url}

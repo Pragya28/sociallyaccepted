@@ -1,20 +1,17 @@
 'use client';
 
-import { NavItems } from '@/types/interface';
 import { Menu, X } from 'lucide-react';
-import { Fragment, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { NavigationMenuList } from '@/ui/navigation-menu';
 import { NavbarItem } from './nav-bar-item';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getIsHalfwayScrollPosition, useStore } from '@/context/store-provider';
 import { Logo } from '@/assets/logo';
+import { getNavigationLinks } from '@/utils/navigation-links';
 
-interface NavMobileProps {
-  navItems: NavItems[];
-}
-
-export const NavMobile = ({ navItems }: NavMobileProps) => {
+export const NavMobile: React.FC = () => {
+  const navItems = getNavigationLinks(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const { state } = useStore();

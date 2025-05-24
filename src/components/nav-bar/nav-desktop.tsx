@@ -1,18 +1,16 @@
 'use client';
 
-import { NavItems } from '@/types/interface';
 import { NavigationMenuList } from '@/ui/navigation-menu';
 import { NavbarItem } from './nav-bar-item';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { getIsHalfwayScrollPosition, useStore } from '@/context/store-provider';
 import { Logo } from '@/assets/logo';
+import React from 'react';
+import { getNavigationLinks } from '@/utils/navigation-links';
 
-interface NavDesktopProps {
-  navItems: NavItems[];
-}
-
-export const NavDesktop = ({ navItems }: NavDesktopProps) => {
+export const NavDesktop: React.FC = () => {
+  const navItems = getNavigationLinks(false);
   const pathname = usePathname();
   const { state } = useStore();
   const halfHeightReached = getIsHalfwayScrollPosition(state);
