@@ -2,13 +2,12 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { fetchEpisodeById } from '@/fetch/episode-by-id';
 
-interface EpisodePageProps {
-  params: { id: string };
-}
+type EpisodePageProps = Promise<{ id: string }>;
 
-export default async function EpisodePage({ params }: EpisodePageProps) {
-  const id = await params.id;
-  const episode = await fetchEpisodeById(id);
+export default async function EpisodePage(props: { params: EpisodePageProps }) {
+  const params = await props.params;
+
+  const episode = await fetchEpisodeById(params.id);
 
   if (!episode) {
     notFound();
