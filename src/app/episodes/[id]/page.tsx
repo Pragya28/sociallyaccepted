@@ -52,7 +52,7 @@ export default async function EpisodePage(props: { params: EpisodePageProps }) {
         </div>
       </div>
       <div className="flex flex-wrap items-center gap-3 justify-center py-2">
-        {platformList.map(({ name, url, icon: Icon }, index) => (
+        {platformList.map(({ url, icon: Icon }, index) => (
           <a
             key={index}
             href={url}
