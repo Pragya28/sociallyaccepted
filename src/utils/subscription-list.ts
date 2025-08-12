@@ -1,36 +1,52 @@
 import { SVGS } from '@/assets/svgs';
+import { SUBSCRIPTION_LIST } from '@/types/constants';
+import { Platforms } from '@/types/interface';
+
+export const PlatformList: Record<
+  Platforms,
+  {
+    name: string;
+    icon: any;
+    gsIcon: any;
+  }
+> = {
+  [Platforms.Spotify]: {
+    name: 'Spotify',
+    icon: SVGS.Spotify,
+    gsIcon: SVGS.SpotifyGS,
+  },
+  [Platforms.ApplePodcast]: {
+    name: 'Apple Podcast',
+    icon: SVGS.ApplePodcast,
+    gsIcon: SVGS.ApplePodcastGS,
+  },
+  [Platforms.AmazonMusic]: {
+    name: 'Amazon Music',
+    icon: SVGS.AmazonMusic,
+    gsIcon: SVGS.AmazonMusicGS,
+  },
+  [Platforms.YoutubeMusic]: {
+    name: 'YouTube Music',
+    icon: SVGS.YoutubeMusic,
+    gsIcon: SVGS.YoutubeMusicGS,
+  },
+  [Platforms.Pocketcasts]: {
+    name: 'Pocketcasts',
+    icon: SVGS.Pocketcasts,
+    gsIcon: SVGS.PocketcastsGS,
+  },
+  [Platforms.YouTube]: {
+    name: 'YouTube',
+    icon: SVGS.Youtube,
+    gsIcon: SVGS.YoutubeGS,
+  },
+};
 
 export const getSubscriptionList = (isGS: boolean) => {
-  return [
-    {
-      name: 'Spotify',
-      url: 'https://open.spotify.com/show/3aNV9l2JFtzjOJlqQSEbCG',
-      icon: isGS ? SVGS.SpotifyGS : SVGS.Spotify,
-    },
-    {
-      name: 'Apple Podcast',
-      url: 'https://podcasts.apple.com/us/podcast/socially-accepted/id1786220734',
-      icon: isGS ? SVGS.ApplePodcastGS : SVGS.ApplePodcast,
-    },
-    {
-      name: 'Amazon Music',
-      url: 'https://music.amazon.com/podcasts/503d7b17-2a34-4a53-9a38-180357c27510/socially-accepted',
-      icon: isGS ? SVGS.AmazonMusicGS : SVGS.AmazonMusic,
-    },
-    {
-      name: 'YouTube Music',
-      url: 'https://music.youtube.com/playlist?list=PLSs1WLMZOZF-lKMiR20jS9EnGwrSOXWu-&si=Q3KDzAHVX-ngTVii',
-      icon: isGS ? SVGS.YoutubeMusicGS : SVGS.YoutubeMusic,
-    },
-    {
-      name: 'Pocketcasts',
-      url: 'https://pca.st/q0uyrxzn',
-      icon: isGS ? SVGS.PocketcastsGS : SVGS.Pocketcasts,
-    },
-    {
-      name: 'YouTube',
-      url: 'https://www.youtube.com/@shreya1100',
-      icon: isGS ? SVGS.YoutubeGS : SVGS.Youtube,
-    },
-  ];
+  const subscriptionList = Object.entries(PlatformList).map(([key, { name, icon, gsIcon }]) => ({
+    name,
+    url: SUBSCRIPTION_LIST[key as Platforms],
+    icon: isGS ? gsIcon : icon,
+  }));
+  return subscriptionList;
 };

@@ -37,6 +37,7 @@ export const fetchAllEpisodes = async ({
     description: item.description,
     duration: item.duration,
     slug: item.slug.current,
+    platforms: {},
   }));
 
   return episodes;

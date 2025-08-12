@@ -16,4 +16,14 @@ export interface EpisodeData {
   coverImage: string;
   id: string;
   slug: string;
+  platforms: Partial<Record<Platforms, string>>;
+}
+
+export enum Platforms {
+  Spotify = 'spotify',
+  ApplePodcast = 'applePodcast',
+  AmazonMusic = 'amazonMusic',
+  YoutubeMusic = 'youtubeMusic',
+  Pocketcasts = 'pocketcasts',
+  YouTube = 'youtube',
 }

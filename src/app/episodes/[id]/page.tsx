@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { fetchEpisodeById } from '@/fetch/episode-by-id';
+import { PlatformList } from '@/utils/subscription-list';
+import { Platforms } from '@/types/interface';
 
 type EpisodePageProps = Promise<{ id: string }>;
 
@@ -12,6 +14,15 @@ export default async function EpisodePage(props: { params: EpisodePageProps }) {
   if (!episode) {
     notFound();
   }
+
+  const platformList = Object.entries(episode.platforms).map(([key, value]) => {
+    const platform = PlatformList[key as Platforms];
+    return {
+      name: platform.name,
+      url: value,
+      icon: platform.icon,
+    };
+  });
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -39,6 +50,19 @@ export default async function EpisodePage(props: { params: EpisodePageProps }) {
             <p className="text-lg">{episode.description}</p>
           </div>
         </div>
+      </div>
+      <div className="flex flex-wrap items-center gap-3 justify-center py-2">
+        {platformList.map(({ name, url, icon: Icon }, index) => (
+          <a
+            key={index}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80"
+          >
+            <Icon className="w-10 h-10" />
+          </a>
+        ))}
       </div>
     </div>
   );
