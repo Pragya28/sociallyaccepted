@@ -3,8 +3,19 @@ import Image from 'next/image';
 import { fetchEpisodeById } from '@/fetch/episode-by-id';
 import { PlatformList } from '@/utils/subscription-list';
 import { Platforms } from '@/types/interface';
+import { fetchAllEpisodes } from '@/fetch/all-episodes';
 
 type EpisodePageProps = Promise<{ id: string }>;
+
+export async function generateStaticParams() {
+  // Example: Fetch your episodes list
+  const episodes = await fetchAllEpisodes({ pageNo: 1, pageSize: 10 });
+
+  // Return params for each static page
+  return episodes.map((episode) => ({
+    id: episode.id.toString(),
+  }));
+}
 
 export default async function EpisodePage(props: { params: EpisodePageProps }) {
   const params = await props.params;

@@ -20,7 +20,11 @@ export const EpisodeItem: React.FC<EpisodeData> = ({
   };
 
   return (
-    <div key={id} className="w-full bg-card text-foreground rounded-lg shadow-md overflow-hidden">
+    <div
+      key={id}
+      className="w-full bg-card text-foreground rounded-lg shadow-md overflow-hidden"
+      onClick={handleListenNow}
+    >
       <div className="relative w-full aspect-[16/9]">
         <Image
           src={coverImage}
@@ -39,10 +43,7 @@ export const EpisodeItem: React.FC<EpisodeData> = ({
           <span>{duration}</span>
         </div>
         <p className="text-sm line-clamp-3 mb-4">{description}</p>
-        <button
-          onClick={handleListenNow}
-          className="w-full py-2 px-4 bg-background text-foreground rounded-md hover:bg-primary/90 transition-colors cursor-pointer"
-        >
+        <button className="w-full py-2 px-4 bg-background text-foreground rounded-md hover:bg-primary/90 transition-colors cursor-pointer">
           Listen Now
         </button>
       </div>
